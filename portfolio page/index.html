@@ -6,46 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Paras</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-    <header class="p-4 flex justify-between items-center">
-        
-        <a href="#" class="flex items-center gap-1 text-sm font-medium">
-            <i data-feather="message-circle" class="w-4 h-4"></i>
+    <header class="p-6 flex justify-between items-center text-base md:text-lg">
+        <a href="#" class="flex items-center gap-2 font-medium">
+            <i data-feather="message-circle" class="w-5 h-5 md:w-6 md:h-6"></i>
             hi@paras.design
-          </a>
-          
-        <nav class="hidden md:flex gap-6 text-sm font-medium">
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label for="menu-toggle" class="md:hidden cursor-pointer">
+            <i data-feather="menu" class="w-7 h-7"></i>
+        </label>
+
+        <nav class="hidden md:flex gap-8 font-medium">
             <a href="#">Works</a>
             <a href="#">Resume</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
         </nav>
-        <button class="md:hidden" id="menu-btn">
-            <i data-feather="menu"></i>
-        </button>
     </header>
 
-    <div class="hidden flex-col p-4 gap-4 text-sm font-medium md:hidden" id="mobile-menu">
+    <nav class="hidden peer-checked:flex flex-col px-6 pb-4 gap-4 text-base font-medium md:hidden">
         <a href="#">Works</a>
         <a href="#">Resume</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
-    </div>
+    </nav>
 
     <main class="flex flex-col items-center justify-center text-center mt-20 px-4">
-        <img src="public\logo.png" alt="Avatar" class="w-20 h-20 rounded-full mb-4" />
-        <h2 class="text-lg mb-1">Hi, I'm <strong>Paras</strong> <span>🤘</span></h2>
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-3xl">
-            Building <span class="text-black underline decoration-blue-300">digital</span> products, brands, and
+        <img src="public/logo.png" alt="Avatar" class="w-24 h-24 rounded-full mb-6" />
+        <h2 class="text-xl md:text-2xl mb-2">Hi, I'm <strong>Paras</strong> <span>🤘</span></h2>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 max-w-3xl">
+            Building <span class="underline decoration-blue-300">digital</span> products, brands, and
             experience.
         </h1>
-        <p class="text-gray-600 max-w-xl text-sm md:text-base">
-            a Product Designer and <strong>Visual Developer</strong> in SF.<br />
+        <p class="text-gray-600 max-w-2xl text-base md:text-lg leading-relaxed">
+            A Product Designer and <strong>Visual Developer</strong> in SF.<br />
             I specialize in UI/UX Design, <strong>Responsive Web Design</strong>,<br />
             and <strong>Visual Development</strong>.
         </p>
@@ -53,12 +53,6 @@
 
     <script>
         feather.replace();
-        const menuBtn = document.getElementById("menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
     </script>
 </body>
 
