@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fylla Replica</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for dark mode class
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} },
+      variants: { extend: {} },
+      plugins: [],
+    }
+  </script>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <!-- NAVBAR -->
+  <nav class="container mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold">FYLLA</a>
+
+    <!-- desktop menu -->
+    <ul class="hidden lg:flex space-x-6 items-center text-sm">
+      <li><a href="#" class="hover:text-white">SERVICES</a></li>
+      <li><a href="#" class="hover:text-white">WORK</a></li>
+      <li><a href="#" class="hover:text-white">STUDIO</a></li>
+      <li><a href="#" class="hover:text-white">BLOG</a></li>
+      <li class="relative group">
+        <button class="flex items-center hover:text-white">
+          PAGES <svg class="w-3 h-3 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5H5z"/></svg>
+        </button>
+        <!-- dropdown -->
+        <ul class="absolute top-full left-0 mt-2 w-40 bg-gray-800 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition">
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Page 1</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Page 2</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Page 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="border px-4 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition">LET’S TALK</a></li>
+
+      <!-- language pills -->
+      <li><button class="px-2">IN</button></li>
+      <li><button class="px-2">PI</button></li>
+      <li><button class="px-2">TW</button></li>
+
+      <!-- dark toggle -->
+      <li>
+        <button id="dark-toggle" class="p-2 rounded hover:bg-gray-700">
+          <svg id="icon-sun" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1..."/></svg>
+          <svg id="icon-moon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293..."/></svg>
+        </button>
+      </li>
+    </ul>
+
+    <!-- mobile hamburger -->
+    <button id="mobile-menu-btn" class="lg:hidden p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- mobile menu panel -->
+  <div id="mobile-menu" class="lg:hidden bg-gray-800 text-gray-200 px-6 py-4 hidden">
+    <ul class="space-y-3">
+      <li><a href="#">SERVICES</a></li>
+      <li><a href="#">WORK</a></li>
+      <li><a href="#">STUDIO</a></li>
+      <li><a href="#">BLOG</a></li>
+      <li><a href="#">PAGES</a></li>
+      <li><a href="#" class="block border px-4 py-2 rounded text-center">LET’S TALK</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="container mx-auto px-6 py-16 grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-6">We are a digital agency from Lisbon.</h1>
+      <p class="text-lg text-gray-300 mb-8">Elevating brands through creative digital solutions, proudly representing Lisbon's vibrant innovation.</p>
+      <div class="space-x-4">
+        <a href="#" class="border border-gray-300 px-6 py-3 rounded hover:bg-gray-700 transition">Our Work</a>
+        <a href="#" class="bg-white text-gray-900 px-6 py-3 rounded hover:bg-gray-200 transition">Let’s Talk</a>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1549921296-3a3b40fc58e9" alt="Team chat" class="w-full rounded-2xl"/>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="bg-gray-800 py-12">
+    <div class="container mx-auto px-6">
+      <h2 class="text-sm text-gray-400 uppercase mb-6">Our Clients</h2>
+      <div class="flex items-center justify-between space-x-4 overflow-x-auto">
+        <!-- repeat these logos -->
+        <img src="https://via.placeholder.com/80x40?text=Logo1" class="h-10"/>
+        <img src="https://via.placeholder.com/80x40?text=Logo2" class="h-10"/>
+        <img src="https://via.placeholder.com/80x40?text=Logo3" class="h-10"/>
+        <img src="https://via.placeholder.com/80x40?text=Logo4" class="h-10"/>
+        <img src="https://via.placeholder.com/80x40?text=Logo5" class="h-10"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="container mx-auto px-6 py-16">
+    <h2 class="text-sm text-gray-400 uppercase text-center mb-12">What We Do</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Service card -->
+      <div class="space-y-4 text-center">
+        <div class="mx-auto">
+          <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M3 7l6 6-6 6M21 7l-6 6 6 6"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold">Branding</h3>
+        <p class="text-gray-400">We craft compelling brand identities that leave a lasting impression.</p>
+      </div>
+      <div class="space-y-4 text-center">
+        <div class="mx-auto">
+          <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4 4h16v16H4z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold">Design</h3>
+        <p class="text-gray-400">Innovative and aesthetic designs that bring your ideas to life.</p>
+      </div>
+      <!-- copy/paste for two more -->
+      <div class="space-y-4 text-center">
+        <div class="mx-auto">
+          <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold">Development</h3>
+        <p class="text-gray-400">Robust and scalable code to power your digital products.</p>
+      </div>
+      <div class="space-y-4 text-center">
+        <div class="mx-auto">
+          <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l4 20-8-4z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold">Marketing</h3>
+        <p class="text-gray-400">Strategies that connect you with your audience and drive growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- index.js -->
+  <script src="index.js"></script>
+</body>
+</html>
